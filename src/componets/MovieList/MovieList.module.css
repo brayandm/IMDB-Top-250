@@ -1,0 +1,7 @@
+.movie_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80vw;
+    margin-top: 50px;
+}

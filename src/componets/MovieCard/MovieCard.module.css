@@ -1,9 +1,21 @@
 .movie_card {
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 290px;
     background-color: black;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie_image {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .movie_card p {
     color: white;
+    text-align: center;
 }
