@@ -1,6 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
 .movie_card {
     width: 170px;
-    height: 300px;
+    height: 250px;
+    padding: 10px;
     background-color: black;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -10,12 +16,61 @@
     align-items: center;
 }
 
+.movie_card_hover {
+    position: relative;
+    width: 170px;
+    height: 250px;
+    padding: 10px;
+    scale: 1.5;
+    background-color: black;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    transition: all 0.5s ease;
+}
+
 .movie_image {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.movie_card p {
+.movie_image_hover {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.movie_name {
+    margin-top: 10px;
+    margin-left: 10px;
     color: white;
-    text-align: center;
+    font-size: 12px;
+}
+
+.movie_rating {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+    font-size: 10px;
+}
+
+.movie_year {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+    font-size: 8px;
+}
+
+.movie_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie_desc {
+    margin-top: 20px;
+    color: lightgray;
+    font-size: 10px;
 }
