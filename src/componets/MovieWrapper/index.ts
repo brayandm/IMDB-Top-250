@@ -1,2 +1,2 @@
-import MovieWrapper from './MovieWrapper';
-export default MovieWrapper;
+import MovieWrapper from './MovieWrapper'
+export default MovieWrapper
