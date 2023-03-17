@@ -12,6 +12,10 @@ export default function Home() {
 
   const movies = GetMovies();
 
+  movies.sort((a, b) => {
+    return a.rating - b.rating;
+  });
+
   return (
     <div className={styles.page}>
       <h1> Hello World </h1>
