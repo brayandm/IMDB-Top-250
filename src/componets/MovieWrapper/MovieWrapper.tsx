@@ -1,20 +1,20 @@
-'use client'
+'use client';
 
-import styles from './MovieWrapper.module.css'
-import { MovieType } from '@/app/types/movie'
-import { useState } from 'react'
-import MovieList from '../MovieList'
+import styles from './MovieWrapper.module.css';
+import { MovieType } from '@/app/types/movie';
+import { useState } from 'react';
+import MovieList from '../MovieList';
 
 type Props = {
-    movies: MovieType[]
-}
+    movies: MovieType[];
+};
 
 export default function MovieWrapper({ movies }: Props) {
-    const [filter, setFilter] = useState('')
+    const [filter, setFilter] = useState('');
 
     movies = movies.filter((movie) => {
-        return movie.name.toLowerCase().includes(filter.toLowerCase())
-    })
+        return movie.name.toLowerCase().includes(filter.toLowerCase());
+    });
 
     return (
         <div className={styles.movie_wrapper}>
@@ -26,5 +26,5 @@ export default function MovieWrapper({ movies }: Props) {
             />
             {<MovieList movies={movies} />}
         </div>
-    )
+    );
 }

@@ -1,10 +1,10 @@
-import styles from './MovieCard.module.css'
-import { MovieType } from '@/app/types/movie'
-import Image from 'next/image'
+import styles from './MovieCard.module.css';
+import { MovieType } from '@/app/types/movie';
+import Image from 'next/image';
 
 type Props = {
-    movie: MovieType
-}
+    movie: MovieType;
+};
 
 export default function MovieCard({ movie }: Props) {
     return (
@@ -28,5 +28,5 @@ export default function MovieCard({ movie }: Props) {
             </div>
             <p className={styles.movie_desc}> {movie.desc}</p>
         </div>
-    )
+    );
 }
