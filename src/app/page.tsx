@@ -1,35 +1,23 @@
-'use client';
-
 import styles from './page.module.css'
-import top250 from '../../public/top250.json'
-import MovieList from '@/componets/MovieList';
-import { useState } from 'react';
+import { MovieType } from '@/app/types/movie'
+import MovieWrapper from '@/componets/MovieWrapper';
 
-function GetMovies() {
-  return top250;
+async function getMovies() {
+  const res = await fetch('https://raw.githubusercontent.com/theapache64/top250/master/top250_min.json')
+  return await res.json() as MovieType[];
 }
 
-export default function Home() {
+export default async function Home() {
 
-  const [filter, setFilter] = useState('');
-
-  let movies = GetMovies();
+  const movies = await getMovies();
 
   movies.sort((a, b) => {
     return a.rating - b.rating;
   });
 
-  movies = movies.filter((movie) => {
-    return movie.name.toLowerCase().includes(filter.toLowerCase());
-  });
-
   return (
     <div className={styles.page}>
-      <h1> Search </h1>
-      <input type="text" value={filter} onChange={e => setFilter(e.target.value)} />
-      {
-        <MovieList movies={movies} />
-      }
+      <MovieWrapper movies={movies} />
     </div>
   )
 }
