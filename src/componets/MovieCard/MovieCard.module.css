@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-.movie_card_hover {
+.movie_card:hover {
     position: relative;
     width: 170px;
     height: 250px;
@@ -37,13 +37,8 @@
     margin-bottom: 10px;
 }
 
-.movie_image_hover {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    transition: all 0.5s ease;
-}
-
 .movie_name {
+    display: none;
     margin-top: 10px;
     margin-left: 10px;
     color: white;
@@ -51,6 +46,7 @@
 }
 
 .movie_rating {
+    display: none;
     margin-top: 10px;
     margin-left: 10px;
     color: white;
@@ -58,6 +54,7 @@
 }
 
 .movie_year {
+    display: none;
     margin-top: 10px;
     margin-left: 10px;
     color: white;
@@ -70,7 +67,30 @@
 }
 
 .movie_desc {
+    display: none;
     margin-top: 20px;
     color: lightgray;
     font-size: 10px;
+}
+
+.movie_card:hover .movie_image {
+    width: 75px;
+    height: 110px;
+    transition: all 0.5s ease;
+}
+
+.movie_card:hover .movie_name {
+    display: block;
+}
+
+.movie_card:hover .movie_rating {
+    display: block;
+}
+
+.movie_card:hover .movie_year {
+    display: block;
+}
+
+.movie_card:hover .movie_desc {
+    display: block;
 }
