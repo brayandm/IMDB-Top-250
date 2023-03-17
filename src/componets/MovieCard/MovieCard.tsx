@@ -1,10 +1,15 @@
 import styles from './MovieCard.module.css'
+import { MovieType } from '@/app/types/movie'
 
-export default function MovieCard() {
+type Props = {
+    movie: MovieType
+}
+
+export default function MovieCard({ movie }: Props) {
 
     return (
         <div className={styles.movie_card}>
-            <p>Movie Card</p>
+            <p>{movie.name}</p>
         </div >
     );
 };

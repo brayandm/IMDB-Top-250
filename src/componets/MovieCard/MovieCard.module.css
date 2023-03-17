@@ -3,3 +3,7 @@
     height: 200px;
     background-color: black;
 }
+
+.movie_card p {
+    color: white;
+}
