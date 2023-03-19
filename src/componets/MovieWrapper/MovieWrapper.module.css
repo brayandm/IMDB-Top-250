@@ -20,3 +20,36 @@
     padding-left: 10px;
     background-color: #CCD6F6;
 }
+
+.filter {
+    background-color: #CCD6F6;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 3px 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.filter_active {
+    background-color: #57DCC0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 3px 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.filter:hover {
+    background-color: #57DCC0;
+    color: #fff;
+}
