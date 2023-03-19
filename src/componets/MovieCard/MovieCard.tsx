@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './MovieCard.module.css';
 import { MovieType } from '@/app/types/movie';
 import Image from 'next/image';
@@ -9,36 +11,42 @@ type Props = {
 };
 
 function addToFavorites(movieId: number) {
-    let favorites = localStorage.getItem('favorites');
-    if (favorites === null) {
-        localStorage.setItem('favorites', movieId.toString());
-    } else {
-        let favoritesArr = favorites.split(',');
-        if (!favoritesArr.includes(movieId.toString())) {
-            favoritesArr.push(movieId.toString());
-            localStorage.setItem('favorites', favoritesArr.join(','));
+    if (typeof window !== 'undefined') {
+        let favorites = localStorage.getItem('favorites');
+        if (favorites === null) {
+            localStorage.setItem('favorites', movieId.toString());
+        } else {
+            let favoritesArr = favorites.split(',');
+            if (!favoritesArr.includes(movieId.toString())) {
+                favoritesArr.push(movieId.toString());
+                localStorage.setItem('favorites', favoritesArr.join(','));
+            }
         }
     }
 }
 
 function removeFromFavorites(movieId: number) {
-    let favorites = localStorage.getItem('favorites');
-    if (favorites !== null) {
-        let favoritesArr = favorites.split(',');
-        if (favoritesArr.includes(movieId.toString())) {
-            favoritesArr = favoritesArr.filter((id) => id !== movieId.toString());
-            localStorage.setItem('favorites', favoritesArr.join(','));
+    if (typeof window !== 'undefined') {
+        let favorites = localStorage.getItem('favorites');
+        if (favorites !== null) {
+            let favoritesArr = favorites.split(',');
+            if (favoritesArr.includes(movieId.toString())) {
+                favoritesArr = favoritesArr.filter((id) => id !== movieId.toString());
+                localStorage.setItem('favorites', favoritesArr.join(','));
+            }
         }
     }
 }
 
 function isInFavorites(movieId: number) {
-    let favorites = localStorage.getItem('favorites');
-    if (favorites === null) {
-        return false;
-    } else {
-        let favoritesArr = favorites.split(',');
-        return favoritesArr.includes(movieId.toString());
+    if (typeof window !== 'undefined') {
+        let favorites = localStorage.getItem('favorites');
+        if (favorites === null) {
+            return false;
+        } else {
+            let favoritesArr = favorites.split(',');
+            return favoritesArr.includes(movieId.toString());
+        }
     }
 }
 
