@@ -82,7 +82,7 @@ export default function MovieCard({ movie }: Props) {
                 </div>
                 <p className={styles.movie_desc}> {movie.desc}</p>
                 {isFavorite ?
-                    (<button className={styles.favorite_button} onClick={(e) => handleFavoriteClick(e)}> ❤️ </button>)
+                    (<button className={styles.favorite_button} onClick={(e) => handleFavoriteClick(e)}> 💙 </button>)
                     :
                     (<button className={styles.favorite_button} onClick={(e) => handleFavoriteClick(e)}> 🤍 </button>)
                 }
