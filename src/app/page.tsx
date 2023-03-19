@@ -6,7 +6,14 @@ async function getMovies() {
     const res = await fetch(
         'https://raw.githubusercontent.com/theapache64/top250/master/top250_min.json'
     );
-    return (await res.json()) as MovieType[];
+    const movies = (await res.json()) as MovieType[];
+
+    movies.forEach((movie, index) => {
+        movie.id = index;
+    }
+    );
+
+    return movies;
 }
 
 export default async function Home() {

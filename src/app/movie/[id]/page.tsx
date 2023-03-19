@@ -1,7 +1,9 @@
 import styles from './page.module.css';
 import { MovieType } from '@/app/types/movie';
+import Image from 'next/image';
+import ButtonBack from '@/componets/ButtonBack';
 
-async function getMovie(id : number) {
+async function getMovie(id: number) {
     const res = await fetch(
         'https://raw.githubusercontent.com/theapache64/top250/master/top250_min.json'
     );
@@ -14,16 +16,21 @@ type Props = {
     }
 };
 
-export default async function Home({params} : Props) {
+export default async function Home({ params }: Props) {
 
-    const id = parseInt(params.id);
-   
-    const movie = await getMovie(1);
+    const movie = await getMovie(parseInt(params.id));
 
     return (
         <div className={styles.page}>
-            <h1>Movie Page {id}</h1>
-
+            <ButtonBack />
+            <h1>{movie.name}</h1>
+            <Image
+                className={styles.movie_image}
+                src={movie.image_url}
+                alt={movie.name}
+                width={150}
+                height={220}
+            />
         </div>
     );
 }

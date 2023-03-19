@@ -1,4 +1,5 @@
 export type MovieType = {
+    id: number;
     actors: string[];
     desc: string;
     directors: string[];
