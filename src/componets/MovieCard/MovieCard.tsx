@@ -9,8 +9,8 @@ type Props = {
 
 export default function MovieCard({ movie }: Props) {
     return (
-        <Link href={`/movie/${movie.id}`}>
-            <div className={styles.movie_card}>
+        <div className={styles.movie_card}>
+            <Link href={`/movie/${movie.id}`}>
                 <div className={styles.container}>
                     <Image
                         className={styles.movie_image}
@@ -29,7 +29,7 @@ export default function MovieCard({ movie }: Props) {
                     </div>
                 </div>
                 <p className={styles.movie_desc}> {movie.desc}</p>
-            </div>
-        </Link>
+            </Link>
+        </div>
     );
 }

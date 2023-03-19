@@ -16,6 +16,11 @@
     align-items: center;
 }
 
+.movie_card a {
+    text-decoration: none;
+    color: white;
+}
+
 .movie_card:hover {
     position: relative;
     width: 170px;
