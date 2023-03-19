@@ -1,3 +1,13 @@
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -5,7 +15,7 @@
 
 .movie_card {
     width: 170px;
-    height: 250px;
+    height: 260px;
     padding: 10px;
     background-color: #112240;
     margin-bottom: 20px;
@@ -14,11 +24,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: fadein 1s;
 }
 
 .movie_card a {
     text-decoration: none;
     color: white;
+}
+
+.movie_card p {
+    animation: fadein 2s;
 }
 
 .movie_card:hover {
@@ -46,7 +61,7 @@
     display: none;
     margin-top: 10px;
     margin-left: 10px;
-    color: white;
+    color: #57DCC0;
     font-size: 12px;
 }
 
@@ -80,7 +95,7 @@
 
 .favorite_button {
     position: relative;
-    bottom: 10px;
+    bottom: 0px;
     left: 140px;
     background-color: transparent;
     border: none;
